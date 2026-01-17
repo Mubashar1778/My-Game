@@ -2,26 +2,329 @@
     margin: 0px;
     padding: 0px;
     scrollbar-width: none;
-    box-sizing: border-box;
 }
 
 body{
-    background-color: #1a1a1a;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    padding: 240px 200px 200px 200px;
-    flex-wrap: wrap;
+    height: 590px;
+    background-color: #0b405a;
 }
 
-@media(max-width: 600px){
-    body{
-        background-color: #000000cf;
-        color: white;
-        font-weight: bold;
-        text-align: center;
-        padding: 220px 20px 20px 20px;
-        font-size: 10px;
-    }
+.game-theme{
+    height: 50px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
+
+.res-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reset{
+    position: absolute;
+    margin-left: 1100px;
+    padding: 0.5rem;
+    height: auto;
+    width: 70px;
+    text-align: center;
+    display: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 100px;
+    font-family: arial;
+    background-color: chocolate;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
+    transition: all 0.4s ease;
+
+}
+
+#reset:active{
+    transform: scale(0.95);
+}
+
+#main-heading{
+    position: absolute;
+    text-align: center;
+    color: black;
+    font-size: 38px;
+    font-family: arial;
+    font-weight: bold;
+}
+
+.imgs{
+    height: 220px;
+    margin-left: 330px;
+    margin-right: 330px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#Rock{
+    height: 120px;
+    width: 120px;
+
+}
+
+.img-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    width: 130px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #dfa927;
+    transition: all  ease;
+}
+
+.img-1:hover{
+    border: 5px solid #CBD5E1;
+}
+
+#Paper{
+    height: 120px;
+    width: 120px;
+}
+
+.img-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #52946b;
+    transition: all ease;
+}
+
+.img-2:hover{
+    border: 5px solid white;
+}
+
+#Scissor{
+    height: 120px;
+    width: 120px;
+}
+
+.img-3{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background-color: #e1bebe;
+    transition: all  ease;
+}
+
+.img-3:hover{
+    border: 5px solid white;
+}
+
+.score{
+    height: 70px;
+    margin-left: 490px;
+    margin-right: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.your{
+    height: 20px;
+    width: 5px;
+}
+
+.comp{
+    height: 20px;
+    width: 5px;
+}
+
+#you-num{
+    width: 35px;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+#comp-num{
+    width: 35px;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+#name{
+    font-size: 18px;
+    text-align: center;
+    font-family: arial;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.last-btn{
+    margin-left: 475px;
+    margin-right: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#pick-btn{
+    display: inline;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #38BDF8;
+    color: black;
+    border-radius: 20px;
+}
+
+.btn{
+    margin-top: 40px;
+    margin-left: 490px;
+    margin-right: 470px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#null-btn{
+    padding: 0.8rem;
+     display: inline;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 200px;
+    font-family: arial;
+    background-color: #38BDF8;
+    color: black;
+    border-radius: 10px;
+}
+
+#full-btn{
+    padding: 0.8rem;
+     display: inline;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 200px;
+    font-family: arial;
+    background-color: #f4a460;
+    color: black;
+    border-radius: 10px;
+}
+
+
+/* ===============================
+   MOBILE FORCE OVERRIDE FIX
+   =============================== */
+
+@media (max-width: 768px){
+
+    *{
+        box-sizing: border-box;
+    }
+
+    body{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        height: auto;
+    }
+
+    /* FORCE remove fixed margins */
+    .imgs,
+    .score,
+    .btn,
+    .last-btn{
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Images section */
+    .imgs{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 15px !important;
+        flex-wrap: wrap !important;
+        padding: 20px;
+    }
+
+    .img-1,
+    .img-2,
+    .img-3{
+        height: 90px !important;
+        width: 90px !important;
+    }
+
+    .img-1 img,
+    .img-2 img,
+    .img-3 img{
+        height: 65px !important;
+        width: 65px !important;
+    }
+
+    /* Heading fix */
+    #main-heading{
+        font-size: 24px !important;
+        text-align: center !important;
+    }
+
+    /* Score section */
+    .score{
+        display: flex !important;
+        justify-content: space-around !important;
+        padding: 20px;
+    }
+
+    #num{
+        font-size: 30px !important;
+    }
+
+    /* User & Comp buttons */
+    .btn{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    #null-btn,
+    #full-btn{
+        width: 100% !important;
+        text-align: center;
+    }
+
+    /* Main result button */
+    .last-btn{
+        padding: 20px;
+    }
+
+    #pick-btn{
+        width: 100% !important;
+        font-size: 18px !important;
+    }
+
+  #reset{
+        font-size: 12px;
+        top: 7px;     
+        right: 297px;  
+        width: 55px;   
+    }
+
+}
+

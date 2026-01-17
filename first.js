@@ -83,7 +83,7 @@ let playgame = (userchoice) => {
         image2.style.pointerEvents = "none";
         image3.style.pointerEvents = "none";
 
-        // Reset button now visible / ready
+        // // Reset button now visible / ready
         resetbtn.style.display = "inline-block";
 
    };
@@ -121,30 +121,8 @@ let gencomp = () => {
 
 
 resetbtn.addEventListener("click", () => {
-    // Reset scores
-    userscore = 0;
-    compscore = 0;
 
-    // Update score displays
-    document.querySelector("#you-num").innerText = userscore;
-    document.querySelector("#comp-num").innerText = compscore;
-
-    // Reset main pick button
-    msg.innerText = "Choose Your Power";
-    msg.style.backgroundColor = "#38BDF8"; // default blue
-
-    // Reset user & comp choice buttons
-    msg2.innerText = "Null";
-    msg2.style.backgroundColor = "#38BDF8"; // user default
-    msg3.innerText = "Null";
-    msg3.style.backgroundColor = "#f4a460"; // comp default
-
-    // Enable image clicks again
-    image1.style.pointerEvents = "auto";
-    image2.style.pointerEvents = "auto";
-    image3.style.pointerEvents = "auto";
-
-     resetbtn.style.display = "none";
+    window.location.reload();
 });
 
 
